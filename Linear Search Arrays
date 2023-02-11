@@ -1,0 +1,23 @@
+// Linear Searching for unsorted array with multiple appearance of searched item.
+
+
+function search(arr, x){
+    const newArr=[]
+    arr.forEach((item,index)=>{
+        if(item===x){
+            newArr.push(index)
+        }
+    })
+    return newArr;
+}
+
+const arr=[12,24,85,41,6,24,96,325,45,36];
+const x = 325;
+const foundArr=search(arr, x)
+
+if(foundArr.length>0){
+    console.log(`${x} found at index position: ${foundArr}`);
+} else{
+    console.log("Sorry Item Not found at any position.");
+}
+
