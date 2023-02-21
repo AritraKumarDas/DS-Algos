@@ -1,0 +1,23 @@
+// Insertion Sort
+const nums= [20,30,80,10,0,60,70,50,90,40];
+//           20,30,80,80
+//           20,30,30,80
+//           20,20,30,80
+//           0,10,20,30,80,60,70,50,90,40  temp=60 i=5
+//           0,10,20,30,80,80
+//           0,10,20,30,60,80
+
+function insertionSort(arr){
+   for(let i=1; i<arr.length; i++){
+       let temp = arr[i];
+       let j = i-1;
+       while(arr[j] > temp && j>= 0){
+           arr[j+1]=arr[j];
+           j=j-1;
+       }
+       arr[j+1]=temp;
+   }
+   return arr;
+}
+    
+console.log(insertionSort(nums));  // Big O = O(n^2)
