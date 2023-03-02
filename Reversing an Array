@@ -1,0 +1,18 @@
+// Reversing an Array 
+
+const nums=[0,10,20,30,40,50,60,70,80,90];
+
+function reverse(arr){
+    let size= arr.length;
+    let mid = Math.floor(arr.length/2);
+    
+   for(let i=0; i<mid; i++){
+       arr[size-1-i] = arr[i] + arr[size-1-i];
+       arr[i] = arr[size-1-i] - arr[i];
+       arr[size-1-i] = arr[size-1-i] - arr[i];
+   }
+
+    return arr;
+}
+
+console.log(reverse(nums));   // Big O = O(n/2)
