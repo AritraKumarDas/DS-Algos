@@ -1,0 +1,27 @@
+// Selection Sort
+
+const nums = [30,20,50,0,60,50,90,80,70,10,90,40];
+
+function selectionSort(arr){
+    for(let i=0; i<arr.length; i++){
+        
+        let minIndex = i;
+       for(let j=i+1; j<arr.length; j++){
+           if(arr[j] < arr[minIndex]){
+               minIndex=j;
+           }
+        } 
+        
+        if(i !== minIndex){
+            arr[i] = arr[i] + arr[minIndex];
+            arr[minIndex] = arr[i] - arr[minIndex];
+            arr[i] = arr[i] - arr[minIndex];
+        }
+    }
+    
+    return arr;
+    
+    
+}
+
+console.log(selectionSort(nums));  // Big O = O(n^2)
