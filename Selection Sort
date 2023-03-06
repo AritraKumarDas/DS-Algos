@@ -5,17 +5,17 @@ const nums = [30,20,50,0,60,50,90,80,70,10,90,40];
 function selectionSort(arr){
     for(let i=0; i<arr.length; i++){
         
-        let minIndex = i;
+        let index = i;
        for(let j=i+1; j<arr.length; j++){
-           if(arr[j] < arr[minIndex]){
-               minIndex=j;
+           if(arr[j] < arr[index]){
+               index=j;
            }
         } 
         
-        if(i !== minIndex){
-            arr[i] = arr[i] + arr[minIndex];
-            arr[minIndex] = arr[i] - arr[minIndex];
-            arr[i] = arr[i] - arr[minIndex];
+        if(i !== index){
+            arr[i] = arr[i] + arr[index];
+            arr[index] = arr[i] - arr[index];
+            arr[i] = arr[i] - arr[index];
         }
     }
     
